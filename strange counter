@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main () {
+    int t;
+    cin >> t;
+    int count=3;
+    
+        int temp = count;
+        label:
+        while(count != 1) {
+            t--;
+            if (t==1) {
+                cout << count;
+                exit(0);
+            } 
+            count --;
+        }
+        count = 2 *temp;
+        temp = count;
+        
+        goto label;
+}
