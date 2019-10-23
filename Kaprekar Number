@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main () {
+    int p,q,check=0;
+    cin >> p >> q;
+    for (int i=p;i<q;i++) {
+        int d=0,temp;
+        temp = i;
+        while  (temp!=0) {
+            temp=temp/10;
+            d++;
+        }
+        long sq;
+        sq=i*i;
+        int a[100],x=0;
+        while(sq!=0){
+            a[x++]= sq%10;
+            sq/=10;
+        }
+        int half1=0,half2=0;
+        for(int j=d-1;j>=0;j--){
+            half1=10*half1 + j;
+        }
+        for(int j=x-1;j>=d;j--){
+            half2=10*half2 + j;
+        }
+        
+        if (half1+half2==i) {
+            cout << i << " ";
+            check ++ ;
+        }
+    }
+    if (check==0)   cout << "INVALID RANGE";
+    return 0;
+}
